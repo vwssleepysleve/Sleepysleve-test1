@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sleepysleve</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+           <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body and HTML take up full height */
+body, html {
+    width: 100%;
+    height: 100%;
+    
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+        margin: 0;
+        padding: 0;
+}
+ /* Apply globally to all elements */
+ * {
+   -webkit-tap-highlight-color: transparent;
+ }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+
+.logo-img {
+    max-width: 190px;
+    transition: filter 0.3s ease;
+}
+
+/* Icons styling */
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons .bi {
+    color: black;
+    font-size: 28px;
+}
+
+/* Sliding menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2000;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.visible {
+    left: 0;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2001;
+    display: flex;
+    align-items: center;
+}
+
+.menu-close .close-text {
+    margin-right: 1px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    order: -1;
+}
+
+.mobile-menu.visible .close-text {
+    opacity: 1;
+}
+
+.menu-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeIn 0.5s ease;
+}
+
+.menu-list {
+    overflow-y: auto;
+    flex-grow: 1;
+    animation: slideIn 0.5s ease;
+}
+
+.menu-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 60px 0 0 20px;
+}
+
+.menu-list ul li {
+    margin: 15px 0;
+}
+
+.menu-list ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: 'Havels', sans-serif;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 8px 0;
+}
+
+.menu-list ul li a:hover {
+    color: #555;
+}
+
+/* Permanent section styling */
+.menu-permanent {
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    animation: fadeIn 0.5s ease;
+}
+
+.menu-permanent .account-options,
+.menu-permanent .contact-email,
+.menu-permanent .social-media {
+    margin: 10px 0;
+    color: #333;
+}
+
+.menu-permanent a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.menu-permanent a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.menu-permanent a:hover {
+    color: #555;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    font-size: 1.5rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Search menu */
+.search-menu {
+    position: fixed;
+    top: 0;
+    right:100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2000;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-menu.visible {
+    right: 0;
+}
+
+.search-close {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Move to the right side */
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2001;
+    display: flex;
+    align-items: center;
+}
+
+.search-close .close-text {
+    margin-right: 10px; /* Add space to the right of the close text */
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-menu.visible .close-text {
+    opacity: 1;
+}
+
+.search-content {
+    margin-top: 60px; /* Ensure the content is below the close button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Full width for the content */
+    padding: 0 20px; /* Padding on left and right */
+}
+
+.search-title {
+    color: #000000; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.5rem;
+}
+
+#search-input {
+    width: calc(0% -20px); /* Adjust input width */
+    padding: 200px; /* Adjust padding for height */
+    margin-bottom: 15px;
+    background-color: #C6C6C6; /* Light grey background */
+    border: none; /* No border */
+    border-radius: 5px;
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    text-align: left; /* Align text to the left */
+    font-weight: 500;
+    font-size: 17px; /* Thinner font weight */
+    color: black; /* Black text color */
+}
+
+#search-input:focus {
+    background-color: #DEDEDE; /* Darker grey on focus */
+}
+
+#search-button {
+    width: calc(100% - 40px); /* Adjust button width */
+    padding: 20px; /* Same padding as input */
+    border: 1px solid black; /* Black outline */
+    background-color: white; /* White background */
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase; /* Uppercase text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#search-button:hover {
+    background-color: black; /* Black background on hover */
+    color: white; /* White text on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .search-menu {
+        width: 50%; /* Half width for larger screens */
+        right: -50%;
+    }
+
+    .search-menu.visible {
+        right: 0;
+    }
+
+    #search-input {
+        width: calc(100% - 40px); /* Adjust input width for larger screens */
+    }
+
+    #search-button {
+        width: calc(100% - 40px); /* Adjust button width for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .search-menu {
+        width: 400px; /* Fixed width for desktop screens */
+        right: -400px;
+    }
+
+    .search-menu.visible {
+        right: 0;
+    }
+
+    #search-input {
+        width: calc(100% - 40px); /* Adjust input width for desktop screens */
+    }
+
+    #search-button {
+        width: calc(100% - 40px); /* Adjust button width for desktop screens */
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    /* Adjust header for desktop */
+    header {
+        top: 0;
+        padding: 20px 40px;
+    }
+
+    /* Adjust mobile menu for desktop */
+    .mobile-menu {
+        width: 300px;
+        left: -300px;
+    }
+
+    .mobile-menu.visible {
+        left: 0;
+    }
+
+    .menu-list ul {
+        margin: 100px 0 0 20px;
+    }
+
+    /* Permanent section styling for desktop */
+    .menu-permanent {
+        padding: 30px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .menu-permanent .account-options,
+    .menu-permanent .contact-email,
+    .menu-permanent .social-media {
+        margin: 20px 0;
+        color: #333;
+    }
+
+    .menu-permanent a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        font-weight: normal;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-permanent a i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .menu-permanent a:hover {
+        color: #555;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-media a {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust search slide for desktop */
+    .search-menu {
+        width: 400px;
+        right: -400px;
+    }
+
+    .search-menu.visible {
+        right: 0;
+    }
+
+    .search-list ul {
+        margin: 100px 0 0 20px;
+    }
+}
+/* Filter button styling */
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.footer-top-divider {
+    width: 100%;
+    border: 0.5px solid white;
+    margin: 0;
+}
+
+.section-divider {
+    width: 100%;
+    border: 0.1px solid #363636;
+    margin: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section {
+    padding: 20px 0;
+}
+
+.pages-section {
+    padding-top: 50px;
+}
+
+.pages-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.pages-section ul li {
+    margin-bottom: 8px;
+}
+
+.pages-section ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.pages-section ul li a:hover {
+    color: white;
+}
+
+.footer-social {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.4rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ccc;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.footer-copyright a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+/* Search Slide */
+/* Search Slide */
+.search-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2000;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-menu.visible {
+    right: 0;
+}
+
+.search-close {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Move to the right side */
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2001;
+    display: flex;
+    align-items: center;
+}
+
+.search-close .close-text {
+    margin-right: 10px; /* Add space to the right of the close text */
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-menu.visible .close-text {
+    opacity: 1;
+}
+
+.search-content {
+    margin-top: 60px; /* Ensure the content is below the close button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Full width for the content */
+    padding: 0 20px; /* Padding on left and right */
+}
+
+.search-title {
+    color: #000000; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.5rem;
+}
+
+#search-input {
+    width: calc(100% - 40px); /* Adjust input width */
+    padding: 20px; /* Adjust padding for height */
+    margin-bottom: 15px;
+    background-color: #C6C6C6; /* Light grey background */
+    border: none; /* No border */
+    border-radius: 5px;
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    text-align: left; /* Align text to the left */
+    font-weight: 500;
+    font-size: 17px; /* Thinner font weight */
+    color: black; /* Black text color */
+}
+
+#search-input:focus {
+    background-color: #DEDEDE; /* Darker grey on focus */
+}
+
+#search-button {
+    width: calc(100% - 40px); /* Adjust button width */
+    padding: 20px; /* Same padding as input */
+    border: 1px solid black; /* Black outline */
+    background-color: white; /* White background */
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase; /* Uppercase text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#search-button:hover {
+    background-color: black; /* Black background on hover */
+    color: white; /* White text on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .search-menu {
+        width: 50%; /* Half width for larger screens */
+        right: -50%;
+    }
+
+    .search-menu.visible {
+        right: 0;
+    }
+
+    #search-input {
+        width: calc(100% - 40px); /* Adjust input width for larger screens */
+    }
+
+    #search-button {
+        width: calc(100% - 40px); /* Adjust button width for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .search-menu {
+        width: 400px; /* Fixed width for desktop screens */
+        right: -400px;
+    }
+
+    .search-menu.visible {
+        right: 0;
+    }
+
+    #search-input {
+        width: calc(100% - 40px); /* Adjust input width for desktop screens */
+    }
+
+    #search-button {
+        width: calc(100% - 40px); /* Adjust button width for desktop screens */
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    /* Adjust header for desktop */
+    header {
+        top: 0;
+        padding: 20px 40px;
+    }
+
+    /* Adjust mobile menu for desktop */
+    .mobile-menu {
+        width: 300px;
+        left: -300px;
+    }
+
+    .mobile-menu.visible {
+        left: 0;
+    }
+
+    .menu-list ul {
+        margin: 100px 0 0 20px;
+    }
+
+    /* Permanent section styling for desktop */
+    .menu-permanent {
+        padding: 30px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .menu-permanent .account-options,
+    .menu-permanent .contact-email,
+    .menu-permanent .social-media {
+        margin: 20px 0;
+        color: #333;
+    }
+
+    .menu-permanent a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        font-weight: normal;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-permanent a i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .menu-permanent a:hover {
+        color: #555;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-media a {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust search slide for desktop */
+    .search-menu {
+        width: 400px;
+        right: -400px;
+    }
+
+    .search-menu.visible {
+        right: 0;
+    }
+
+    .search-list ul {
+        margin: 100px 0 0 20px;
+    }
+}
+.loader-wrapper {
+  position: fixed; /* Ensures the loader stays fixed in the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures the loader is on top of other content */
+}
+
+.loader-wrapper .loader {
+  font-size: 3em; /* Adjust font size as needed */
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader-wrapper .loader::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  top: 0;
+  left: -100%;
+  animation: slide-in 2s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes slide-in {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+        .container {
+            margin-top: 70px;margin-bottom:100px;
+        }
+
+        .hero-section {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            border-radius: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:linear-gradient(to right, #5334FF,#C168EC);
+            border-radius: 60px;
+        }
+
+       .hero-section h1 {
+            position: relative;
+            
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            position: relative;
+            font-size: 1.25rem;font-family:'Playfair Display';margin-top:30px;
+        }
+
+        .section {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6c63ff;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .highlight {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            margin-right: 15px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .team-member h4 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .team-member p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .call-to-action {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .call-to-action a {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.125rem;
+            color: #fff;
+            background-color:#7B4EFF;
+            border-radius: 40px;
+            text-decoration: none;
+        }
+
+        .call-to-action a:hover {
+            background-color: #5a52cc;
+        }
+    </style>
+</head>
+
+<body>
+      <div class="loader-wrapper">
+    <div class="loader">SLEEPYSLEVE</div>
+  </div>
+  
+      <header id="main-header">
+        <div class="logo">
+            <img src="/Sleepysleve/images/sleepysleve7.png" alt="Logo" class="logo-img" loading="lazy">
+        </div>
+        <div class="icons">
+            <div class="menu-icon" id="menu-icon">
+                <i class="bi bi-list"></i>
+            </div>
+            <div class="search-icon"><i class="bi bi-search"></i></div>
+          <div class="cart-icon" id="cart-icon"><i class="bi bi-cart"></i></div>
+        </div>
+    </header>
+    <div class="search-menu" id="search-menu">
+    <div class="search-close" id="search-close">
+        <i class="bi bi-x"></i>
+        <span class="close-text">Close</span>
+    </div>
+    <div class="search-content">
+        <h2 class="search-title">SEARCH STORE</h2>
+        <input type="text" placeholder="Search..." id="search-input">
+        <button id="search-button" >GO</button>
+    </div>
+</div>
+
+
+    <!-- Sliding menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="menu-close" id="menu-close">
+            <i class="bi bi-x"></i>
+            <span class="close-text">Close</span>
+        </div>
+        <div class="menu-content">
+            <div class="menu-list">
+                <ul>
+                    <li><a href="/Sleepysleve/v4/index.html">Home</a></li>
+                    <li><a href="/Sleepysleve/v4/category.html?category=t-shirts">T-Shirts</a></li>
+                    <li><a href="/Sleepysleve/v4/category.html?category=polos">Polo's</a></li>
+                    <li><a href="/Sleepysleve/v4/category.html?category=hoodies">Hoodies</a></li>
+                    <li><a href="/Sleepysleve/v4/category.html?category=sweatshirts">Sweatshirts</a></li>
+                    <li><a href="/Sleepysleve/v4/cupons.html">Cupons</a></li>
+                    <li><a href="https://www.instagram.com/sleepysleve?igsh=aGk5YjZkbHE1ejgz">Direct Messages</a></li>
+                    <li><a href="/Sleepysleve/v4/contact-us.html">Contact Us</a></li>
+                    <li><a href="/Sleepysleve/v4/about-us.html">About Us</a></li>
+                    <!-- Add more menu items if needed -->
+                </ul>
+            </div>
+            <div class="menu-permanent">
+                <div class="account-options">
+                    <a href="/Sleepysleve/v4/accounts.html"><i class="bi bi-person"></i> My Account</a>
+                </div>
+                <div class="contact-email">
+                    <a href="mailto:sleepysleve@gmail.com"><i class="bi bi-envelope"></i> sleepysleve@gmail.com</a>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/profile.php?id=100089126589208&mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a>
+                    <a href="https://whatsapp.com/channel/0029Vafu9uyDzgTCjX3UbG3I"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/sleepysleve?igsh=aGk5YjZkbHE1ejgz"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1>Welcome to Sleepysleve</h1>
+            <p>Quality Clothing with a Trendy Twist :)</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-description"><span class="highlight">Sleepysleve</span> Founded in November 2023, Sleepysleve is the brainchild of an ambitious 18-year-old, <span class="highlight">Vishva</span>. With a passion for fashion and an unwavering commitment to quality, Vishva embarked on a journey to create a brand that stands for comfort, style, and inclusivity. Sleepysleve is not just a clothing brand; it’s a labor of love, designed to make everyone feel good in what they wear.
+</p>
+            <h2 class="section-title">Our Story</h2>
+            <p class="section-description">
+            Starting Sleepysleve was no easy task. At just 18, Vishva faced numerous challenges but remained steadfast in the belief that everyone deserves to feel comfortable and confident in their clothes. This journey has been one of creativity, hard work, and a relentless pursuit of perfection. Every stitch, every fabric choice, and every design has been carefully considered to ensure that our products meet the highest standards.
+</p>
+  <h2 class="section-title">Our Mission</h2>
+  <p class="section-description">
+      Our mission at Sleepysleve is simple: to make everyone feel good in what they wear. We believe that fashion should be accessible, enjoyable, and inclusive. We aim to see Sleepysleve products worn by people everywhere, spreading a message of positivity and inclusivity. 
+       </p>
+     
+       <h2 class="section-title">Join  Us On Our Journey</h2>
+            <p class="section-description">
+              We invite you to join us on this exciting journey. Whether you’re looking for a cozy hoodie or a stylish t-shirt, Sleepysleve has something for you. Explore our collection, find your perfect fit, and become a part of the Sleepysleve family.
+              
+              Thank you for supporting our dream and making Sleepysleve a part of your wardrobe. Together, we can spread good vibes and make the world a more comfortable place, one garment at a time.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"></h2>
+            <div class="team-member">
+                <img src="/Sleepysleve/images/sleepysleve-cir.jpg" alt="Team Member">
+                <div>
+ <h4>Sleepysleve</h4>
+ <p>Founder & Creative Lead</p>
+ <p>As the visionary behind Sleepysleve, our founder brings a passion for fashion and quality, ensuring that every piece resonates with our commitment to excellence and style.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="/Sleepysleve/images/VWS.jpg" alt="Team Member">
+                <div>
+  <h4>VWS (Vardaan Web Services)</h4>
+  <p>Technology Partner</p>
+  <p>VWS empowers Sleepysleve with cutting-edge technology, ensuring a seamless online shopping experience. We specialize in providing tech services to brands and startups, supporting entrepreneurs with their visionary goals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="call-to-action">
+            <p>Ready to experience the best in fashion? <a href="index.html">Continue Shopping</a></p>
+        </div>
+    </div>
+<footer class="footer">
+    <hr class="footer-top-divider">
+    <div class="footer-content">
+        <div class="footer-section pages-section">
+            <ul>
+                <li><a href="/Sleepysleve/v4/privacy-policy.html">Privacy & Policy</a></li>
+                <li><a href="/Sleepysleve/v4/refund-return-policy.html">Refund & Return Policy</a></li>
+                <li><a href="/Sleepysleve/v4/shipping-policy.html">Shipping Policy</a></li>
+
+                <li><a href="/Sleepysleve/v4/about-us.html">About Us</a></li>
+                <li><a href="/Sleepysleve/v4/contact-us.html">Contact Us</a></li>
+                  <li><a href="/Sleepysleve/v4/index.html">Home</a></li>
+                
+            </ul>
+        </div>
+        <hr class="section-divider">
+        <div class="footer-section">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=100089126589208&mibextid=ZbWKwL" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vafu9uyDzgTCjX3UbG3I" title="Whatsapp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.instagram.com/sleepysleve?igsh=aGk5YjZkbHE1ejgz" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <hr class="section-divider">
+        <div class="footer-section">
+            <p class="footer-copyright"><a href="/Sleepysleve/v4/copyright.html" class="copyright-text">© 2024 SLEEPYSLEVE™</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+    const searchIcon = document.querySelector('.search-icon');
+    const searchMenu = document.getElementById('search-menu');
+    const searchClose = document.getElementById('search-close');
+
+    menuIcon.addEventListener('click', function() {
+        mobileMenu.classList.add('visible');
+    });
+
+    menuClose.addEventListener('click', function() {
+        mobileMenu.classList.remove('visible');
+    });
+
+    searchIcon.addEventListener('click', function() {
+        searchMenu.classList.add('visible');
+    });
+
+    searchClose.addEventListener('click', function() {
+        searchMenu.classList.remove('visible');
+    });
+
+    // Removed the header transformation code
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Hide loader wrapper once content is loaded
+  document.querySelector(".loader-wrapper").style.display = "none";
+});
+
+
+
+ document.getElementById('cart-icon').addEventListener('click', function() {
+      window.location.href = '/Sleepysleve/v4/cart.html';
+    });
+    // Checkout button functionality
+    const checkoutButton = document.getElementById('checkoutButton');
+    checkoutButton.addEventListener('click', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        localStorage.setItem('checkoutCart', JSON.stringify(cart));
+        window.location.href = '/Sleepysleve/v4/checkout.html';
+    });
+
+
+
+    document.getElementById('search-button').addEventListener('click', function() {
+  const query = document.getElementById('search-input').value.trim();
+  if (query) {
+    window.location.href = `/Sleepysleve/v4/search-results.html?query=${encodeURIComponent(query)}`;
+  }
+});
+
+
+</script>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

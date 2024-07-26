@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - SLEEPYSLEVE</title>
+    <link rel="stylesheet" href="/Sleepysleve/v4/css/checkout.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Bootstrap Icons CSS -->
+
+     
+</head>
+<body>
+     <header>
+        <a href="#" onclick="history.back();" class="back-link"><i class="bi bi-arrow-left"></i></a>
+<a href="/Sleepysleve/v4/index.html" class="logo-link">
+  <img src="/Sleepysleve/images/sleepysleve7.png" alt="Sleepysleve Logo" class="logo" loading="lazy">
+</a>
+
+
+
+
+  <!-- Telegram Loader -->
+  <div class="telegram-loader-wrapper">
+    <div class="telegram-loader"></div>
+  </div>
+
+  <!-- Your existing loader wrapper for other purposes -->
+ 
+
+
+
+    </header>
+
+    <div class="loader-wrapper">
+    <div class="loader">SLEEPYSLEVE</div>
+  </div>
+  <!-- Custom Popup -->
+  <div id="customPopup" class="custom-popup">
+    <div class="custom-popup-content">
+      <span id="popupClose" class="custom-popup-close">&times;</span>
+      <p id="popupMessage"></p>
+      <button id="popupOk" class="custom-popup-ok">OK</button>
+    </div>
+  </div>
+
+    <main>
+        <section id="checkoutItems"></section>
+        <section id="orderSummary">
+            <h2>Order Summary</h2>
+            <div id="summaryOriginal"></div>
+            <div id="summaryDiscount"></div>
+            <div id="summaryDelivery"></div>
+            <div id="summarySavings"></div>
+            <div id="summaryTotal"></div>
+        </section>
+        <section id="shippingDetails">
+            <h2>Shipping Details</h2>
+            <form id="shippingForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <div class="error-message" id="nameError"></div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <div class="error-message" id="emailError"></div>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your 10 digits phone number" required pattern="^\+?[0-9]{10,14}$" title="Please enter a valid phone number">
+                <div class="error-message" id="phoneError"></div>
+
+                <label for="streetAddress">Street Address:</label>
+                <input type="text" id="streetAddress" name="streetAddress" placeholder="Your street address" required>
+                <div class="error-message" id="streetAddressError"></div>
+
+                <label for="landmark">Landmark (Optional):</label>
+                <input type="text" id="landmark" name="landmark" placeholder="Nearby landmark">
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Your city" required>
+                <div class="error-message" id="cityError"></div>
+
+                <label for="state">State/Province:</label>
+                <input type="text" id="state" name="state" placeholder="Your state/province" required>
+                <div class="error-message" id="stateError"></div>
+
+                <label for="postalCode">Zip/Postal Code:</label>
+                <input type="text" id="postalCode" name="postalCode" placeholder="Your zip/postal code" required>
+                <div class="error-message" id="postalCodeError"></div>
+
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" placeholder="Your country" required>
+                <div class="error-message" id="countryError"></div>
+
+                <label for="FACE">UPI ID:</label>
+                <input type="text" id="FACE" name="FACE" placeholder="Your UPI ID" required>
+                <div class="error-message" id="FACEError"></div>
+            </form>
+        </section>
+
+        <section id="couponSection">
+            <h2>Apply Coupon</h2>
+            <form id="couponForm">
+                <label for="promoInput">Coupon Code:</label>
+                <input type="text" id="promoInput" name="promoInput" placeholder="Enter coupon code">
+                <button type="button" id="applyPromoButton">Apply</button>
+            </form>
+            <div id="promoMessage"></div>
+        </section>
+        <section id="paymentOptions">
+            <h2>Select Payment Method</h2>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="paymentAppDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Payment App
+                </button>
+                <div class="dropdown-menu" aria-labelledby="paymentAppDropdown">
+                    <form id="paymentForm">
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="googlepay" required> Google Pay (GPay)
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="phonepe" required> PhonePe
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="paytm" required> Paytm
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="bhim" required> BHIM (Bharat Interface for Money)
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="amazonpay" required> Amazon Pay
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="whatsapppay" required> WhatsApp Pay
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="radio" name="upiApp" value="mobikwik" required> Mobikwik
+                        </label>
+                        <div class="dropdown-item">
+                            <button type="button" id="placeOrderButton" class="btn-btn-primary">Place Order</button>
+                        </div>
+                        <div class="error-message" id="paymentError"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="qrCodeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pay via QR Code
+                </button>
+                <div class="dropdown-menu p-4" aria-labelledby="qrCodeDropdown">
+                    <div id="qrCode">
+                        <!-- QR code image here -->
+                    </div>
+                    <p>Scan the QR code above using any UPI app to complete your payment. Once done, click the "Payment Done" button below to proceed.</p>
+                       <img id="qrCodeImage" src="/Sleepysleve/images/upiqr.png" alt="QR Code for Payment">
+                                   <p>After completing the payment, click "Payment Done" to confirm.</p>
+                    <button type="button" id="paymentDoneButton" class="btn-btn-success">Payment Done</button>
+                </div>
+            </div>
+            
+        </section>
+        <section>
+  <div id="confirm-order-section" class="mt-4">
+    <p>After completing your payment, please confirm your order by clicking the 'Confirm Order' button to ensure your purchase is finalized.</p>
+    <button id="confirm-order-btn" class="btn btn-primary">Confirm Order</button>
+  </div>
+  </section>
+  <section>
+    <div class="container">
+        <div class="policy-section">
+            <div class="policy-item">
+                <i class="fas fa-undo-alt policy-icon"></i>
+                <div class="policy-text">Refunds and returns are accepted only before order confirmation.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-phone policy-icon"></i>
+                <div class="policy-text">You will receive a confirmation call within 24 hours of placing your order.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-clock policy-icon"></i>
+                <div class="policy-text">Estimated delivery time is 6-7 business days.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-ban policy-icon"></i>
+                <div class="policy-text">To cancel your order, please <a href="contact-us-url">contact us</a>.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-envelope policy-icon"></i>
+                <div class="policy-text">Shipping updates will be sent to your provided email or phone number.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-headset policy-icon"></i>
+                <div class="policy-text">For any assistance, connect with our <a href="/Sleepysleve/v4/help-support-contact.html">help/support team</a>.</div>
+            </div>
+        </div>
+    </div>
+
+</section
+<section id="quickLinksSection">
+  <h2>Quick Links</h2>
+  <ul>
+    <li><a href="/Sleepysleve/v4/help-support-contact.html">Help/Support Center</a></li>
+
+    <li><a href="/Sleepysleve/v4/refund-return-policy.html">Return & Refund Policy</a></li>
+
+    <li><a href="/Sleepysleve/v4/Order-Tracking.html">Order Tracking</a></li>
+    <li><a href="/Sleepysleve/v4/shipping-policy.html">Shipping Information</a></li>
+    <li><a href="/Sleepysleve/v4/cupons.html">Coupons and Discounts</a></li>
+    <li><a href="/Sleepysleve/v4/terms-condition.html">Terms and Conditions</a></li>
+    <li><a href="/Sleepysleve/v4/contact-us.html">Contact Us</a></li>
+    <li><a href="/Sleepysleve/v4/accounts.html">Account</a></li>
+    <li><a href="/Sleepysleve/v4/Payment-Methods.html">Payment Methods</a></li>
+    <li><a href="/Sleepysleve/v4/privacy-policy.html">Privacy Policy</a></li>
+  </ul>
+</section>
+  
+
+    </main>
+    <footer class="footer">
+    <hr class="footer-top-divider">
+    <div class="footer-content">
+        <div class="footer-section pages-section">
+            <ul>
+                <li><a href="/Sleepysleve/v4/privacy-policy.html">Privacy & Policy</a></li>
+                <li><a href="/Sleepysleve/v4/refund-return-policy.html">Refund & Return Policy</a></li>
+                <li><a href="/Sleepysleve/v4/shipping-policy.html">Shipping Policy</a></li>
+            
+                <li><a href="/Sleepysleve/v4/about-us.html">About Us</a></li>
+                <li><a href="/Sleepysleve/v4/contact-us.html">Contact Us</a></li>
+                  <li><a href="/Sleepysleve/v4/index.html">Home</a></li>
+                
+            </ul>
+        </div>
+        <hr class="section-divider">
+        <div class="footer-section">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=100089126589208&mibextid=ZbWKwL" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vafu9uyDzgTCjX3UbG3I" title="Whatsapp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.instagram.com/sleepysleve?igsh=aGk5YjZkbHE1ejgz" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <hr class="section-divider">
+        <div class="footer-section">
+            <p class="footer-copyright"><a href="/Sleepysleve/v4/copyright.html" class="copyright-text">© 2024 SLEEPYSLEVE™</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/Sleepysleve/v4/js/checkout.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
