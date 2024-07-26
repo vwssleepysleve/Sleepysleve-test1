@@ -1,0 +1,762 @@
+/* Styles for the entire checkout page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body and HTML take up full height */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+
+main {
+    max-width: 800px;
+    margin: 4em auto;
+    padding: 1em;padding-bottom:5em;margin-bottom:0px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 5em;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+form {
+    margin: 0;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+}
+/* General styling for the checkout items container */
+/* Styles for the order summary */
+/* General styling for the order summary section */
+/* Order Summary Section */
+
+
+
+
+/* Styling for summary items */
+/* Order Summary Section */
+/* Order Summary Section */
+#orderSummary {
+   background: linear-gradient(to right,
+     #976FE7, #E1D1FF);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+#orderSummary h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 3px solid 
+  #2D0085;
+  padding-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Summary Item Styling */
+#orderSummary>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2D0085;
+}
+
+#orderSummary>div:last-child {
+  border-bottom: none;
+}
+
+#orderSummary .summary-item-label {
+  font-size: 18px;
+  color: #555;
+  font-weight: 800;
+}
+
+#orderSummary .summary-item-value {
+  font-size: 40px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Total Summary Styling */
+#summaryTotal {
+  font-size: 26px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-top: 2px solid #2D0085;
+  padding-top: 10px;
+  margin-top: 15px;
+}
+/* Styling for promo messages */
+#promoMessage {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#promoMessage.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+#promoMessage.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Styling for buttons */
+#orderSummary .button-container {
+  margin-top: 20px;
+}
+
+#orderSummary .button-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#orderSummary .button-container button:hover {
+  background-color: #0056b3;
+}
+/* Styles for the shipping details form */
+#shippingDetails {
+    border: 1px solid #ddd;
+    padding: 1em;
+         background: linear-gradient(to right,
+           #976FE7, #E1D1FF);
+        border-radius: 10px;
+}
+
+#shippingDetails form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+#shippingDetails input,
+#shippingDetails select {
+    width: 100%;
+    padding: 0.5em;
+    border: 2px solid #420EA9;
+    border-radius:20px;
+}
+
+/* Styles for the coupon section */
+#couponSection {
+    border: 1px solid #ddd;
+    padding: 1em;
+         background: linear-gradient(to right,
+           #9173FF, 
+           #CDBFFF);
+        border-radius: 10px;
+}
+
+#couponSection form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+#promoInput {
+    flex: 1 1 70%;
+    padding: 0.5em;
+    border: 2px solid #420EA9;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+#applyPromoButton {
+    flex: 1 1 25%;
+    padding: 0.5em;
+    border: none;
+    background-color: #010A77;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#promoMessage {
+    margin-top: 1em;
+    color: red;
+}
+
+/* Styles for the payment options */
+
+/* Styles for the payment options */
+#paymentOptions {
+  border: 1px solid #ddd;
+  padding: 1em;
+   background: linear-gradient(to right,
+     #C2A3FF, #F1EAFF);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column; /* Stack dropdown items vertically */
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color:#ffffff;
+  border-radius: 5px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f4f8;
+}
+
+.dropdown-item input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Styles for buttons */
+.btn-btn-primary,
+.btn-btn-success {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Primary button styles */
+.btn-btn-primary {
+  background-color: #FF6B00; /* Bright blue for primary actions */
+}
+
+.btn-btn-primary:hover {
+  background-color: #FFBD8E; /* Darker blue on hover */
+}
+
+/* Success button styles */
+.btn-btn-success {
+  background-color: #FD974D; /* Green for success actions */
+}
+
+.btn-btn-success:hover {
+  background-color: #FFBD8E; /* Darker green on hover */
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5em;
+}
+
+/* Styles for the QR code section */
+#qrCodeDropdown .dropdown-menu {
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#qrCodeImage {
+  width: 150px;
+  height: 150px;
+  margin: 10px 0;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#qrCodeDropdown p {
+  text-align: left;
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Custom styles for Bootstrap dropdowns */
+.dropdown-toggle::after {
+  margin-left: 0.5em;
+}
+
+
+/* General styling for the checkout items container */
+#checkoutItems {
+   background: linear-gradient(to right, 
+  #976FE7, #E1D1FF);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+/* Header styling */
+#checkoutItems h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Styling for individual checkout items */
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid  #2D0085;
+    align-items: center;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-item .product-name {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.checkout-item .product-name:hover {
+    color: #0056b3;
+}
+
+.checkout-item span {
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Total amount styling */
+#totalAmount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #007bff;
+}
+
+/* Additional styling for empty cart message */
+#checkoutItems p {
+    font-size: 20px;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Order Summary Section */
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0;padding-right:0px;
+}
+
+.footer-top-divider {
+    width: 100%;
+    border: 0.5px solid white;
+    margin: 0;
+}
+
+.section-divider {
+    width: 100%;
+    border: 0.1px solid #363636;
+    margin: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section {
+    padding: 20px 0;
+}
+
+.pages-section {
+    padding-top: 50px;
+}
+
+.pages-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.pages-section ul li {
+    margin-bottom: 8px;
+}
+
+.pages-section ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.pages-section ul li a:hover {
+    color: white;
+}
+
+.footer-social {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.4rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ccc;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.footer-copyright a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+/* Search Slide */
+/* Search Slide */
+.loader-wrapper {
+  position: fixed; /* Ensures the loader stays fixed in the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures the loader is on top of other content */
+}
+
+.loader-wrapper .loader {
+  font-size: 3em; /* Adjust font size as needed */
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader-wrapper .loader::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  top: 0;
+  left: -100%;
+  animation: slide-in 2s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes slide-in {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+
+
+
+
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-height: 40px;
+  mix-blend-mode: difference ;
+  align-items:center;
+}
+
+.back-link {
+  color: #333333;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hide loader initially */
+/* Hide loader initially */
+.telegram-loader-wrapper {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    z-index: 9999; /* Ensure it's on top */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Loader styling */
+.telegram-loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #000000; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+.custom-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.custom-popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.custom-popup-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.custom-popup-close:hover,
+.custom-popup-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.custom-popup-ok {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#confirm-order-section {
+  text-align: center;
+  margin-top: 2em;
+}
+
+#confirm-order-btn {
+  border: none;
+  padding: 1em 6em;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50px;
+  background: linear-gradient(to right, #ff6f61, #d53369);
+  transition: background 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+#confirm-order-btn:hover {
+  background: linear-gradient(to right, #d53369, #ff6f61);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#quickLinksSection {
+  border: 1px solid #ddd;
+  padding: 1em;
+  background: linear-gradient(to right, 
+  #976FE7, #E1D1FF);
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+#quickLinksSection h2 {
+  text-align: center;
+  color: #333;
+}
+
+#quickLinksSection ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#quickLinksSection li {
+  margin: 0.5em;
+}
+
+#quickLinksSection a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  background: linear-gradient(to right, #6a0dad, #8a2be2);
+  transition: background 0.3s, color 0.3s;
+}
+
+#quickLinksSection a:hover {
+  background: linear-gradient(to right, #8a2be2, #6a0dad);
+  color: #fff;
+}
+
+
+
+
+
+
+
+        .policy-section {
+border: 1px solid #ddd;
+  padding: 1em;
+  background: linear-gradient(to right, 
+  #A498FF, #DDD8FF);
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+      .policy-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .policy-icon {
+            color: #0C0167;
+            margin-right: 10px;
+        }
+        .policy-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .policy-text a:hover {
+            text-decoration: underline;
+        }
+ /* Apply globally to all elements */
+ * {
+   -webkit-tap-highlight-color: transparent;
+ }
