@@ -1,0 +1,14 @@
+[
+  {
+    "code": "SAVE10",
+    "expiryDate": "2023-12-31",
+    "minimumAmount": 50,
+    "discountPercentage": 10
+    },
+  {
+    "code": "WELCOME20",
+    "expiryDate": "2024-11-30",
+    "minimumAmount": 100,
+    "discountPercentage": 20
+    }
+]
