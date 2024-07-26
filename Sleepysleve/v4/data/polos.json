@@ -1,0 +1,248 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe e",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "/Sleepysleve/assets/Images/Products-images/sweatshirt-ss.jpg",
+        "/Sleepysleve/assets/Images/Products-images/t-shirts-ss.jpg",
+        "images/tshirt_3.jpg"
+        , "https://veloce.in/cdn/shop/files/IMG_6583.png?v=1699193456"
+      ],
+      "description":  
+ 
+
+"Off-White slightly oversized fit hoodie in a heavy weight jersey cotton. Super soft, pre-shrunk and piece dyed for the ultimate jersey. Ribbed hem & cuffs. bodega print to the chest & back.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jeans",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/sweatshirt-ss.jpg",
+      "price": 49.99,
+      "ex_price": 69.99,
+      "discount_percentage": 28.58,
+      "tags": ["trending"],
+            "filter": ["featured"],
+            "date_added": "2023-04-10",
+      "images": [
+        "images/jeans_1.jpg",
+        "images/jeans_2.jpg",
+        "images/jeans_3.jpg",
+        "images/jeans_4.jpg"
+      ],
+      "description": "Stylish jeans for a casual look.",
+      "labels": {
+        "color": "black",
+        "category": "pants",
+        "brand": "Brand D",
+        "material": "denim"
+      }
+    }
+ 
+   , 
+       {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    }, 
+        {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 1,
+      "name": "T-Shirt behendd dhrhdr rhe ehe r erhrb",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    },
+    {
+      "id": 3,
+      "name": "VWS",
+      "thumbnail": "/Sleepysleve/assets/Images/Products-images/hoodies-ss.jpg",
+      "price": 19.99,
+      "ex_price": 29.99,
+      "discount_percentage": 33.34,
+      "tags": ["best product"],
+      "filter": ["featured", "best selling"],
+      "date_added": "2024-04-10",
+      "images": [
+        "images/tshirt_1.jpg",
+        "images/tshirt_2.jpg",
+        "images/tshirt_3.jpg"
+      ],
+      "description": "Comfortable and stylish T-Shirt for everyday wear.",
+      "labels": {
+        "color": "blue",
+        "category": "shirts",
+        "brand": "Brand C",
+        "material": "cotton"
+      }
+    }
+
+
+    
+    
+    
+    
+    
+  ]
+}
